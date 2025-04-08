@@ -13,6 +13,8 @@ interface HighRiskResult {
   condition: string
 }
 
+const ApiUrl = 'http://ec2-3-148-209-229.us-east-2.compute.amazonaws.com/api/upload'
+
 function App() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [highRiskResults, setHighRiskResults] = useState<HighRiskResult[] | null>(null);
@@ -39,7 +41,7 @@ function App() {
     formData.append('oruFile', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/upload', formData, {
+      const response = await axios.post(ApiUrl, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
