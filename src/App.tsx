@@ -1,5 +1,4 @@
-// src/App.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import FileUpload from './Dropzone';
